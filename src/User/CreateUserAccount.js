@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container } from '@material-ui/core';
 
-class UserCreateAccount extends Component {
+class CreateUserAccount extends Component {
     constructor(props) {
         super(props)
 
@@ -10,14 +10,13 @@ class UserCreateAccount extends Component {
         return (
             <Container component="main" maxWidth="xs">
             <CssBaseline />
-            <div className={classes.paper}>
-                <Avatar className={classes.avatar}>
-                    <LockOutlinedIcon />
+            <div className="containerStyle">
+                <Avatar>
                 </Avatar>
                 <Typography component="h1" variant="h5">
                     Sign up
                 </Typography>
-                <form className={classes.form} noValidate>
+                <form className="formStyle" noValidate>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
                             <TextField
@@ -77,8 +76,8 @@ class UserCreateAccount extends Component {
                         fullWidth
                         variant="contained"
                         color="primary"
-                        className={classes.submit}>
-                        Sign Up
+                        className="submitStyle">
+                        Create User Account
                     </Button>
                     <Grid container justify="flex-end">
                         <Grid item>
@@ -90,10 +89,9 @@ class UserCreateAccount extends Component {
                 </form>
             </div>
                 <Box mt={5}>
-                    <Copyright />
                 </Box>
             </Container>
         );
     }
 }
-export default UserCreateAccount;
+export default CreateUserAccount;
