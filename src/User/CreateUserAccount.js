@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container } from '@material-ui/core';
+import { Avatar, Button, CssBaseline, TextField, Link, Grid, Box, Typography, Container } from '@material-ui/core';
 
 class CreateUserAccount extends Component {
     constructor(props) {
@@ -57,6 +57,30 @@ class CreateUserAccount extends Component {
                             variant="outlined"
                             required
                             fullWidth
+                            name="phone"
+                            label="Phone"
+                            type="phone"
+                            id="phone"
+                            autoComplete="phone"
+                        />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <TextField
+                            variant="outlined"
+                            required
+                            fullWidth
+                            name="username"
+                            label="Username"
+                            type="username"
+                            id="username"
+                            autoComplete="current-username"
+                        />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <TextField
+                            variant="outlined"
+                            required
+                            fullWidth
                             name="password"
                             label="Password"
                             type="password"
@@ -64,13 +88,9 @@ class CreateUserAccount extends Component {
                             autoComplete="current-password"
                         />
                     </Grid>
-                    <Grid item xs={12}>
-                        <FormControlLabel
-                            control={<Checkbox value="allowExtraEmails" color="primary" />}
-                            label="I want to receive inspiration, marketing promotions and updates via email."
-                        />
+
                     </Grid>
-                    </Grid>
+                    <br />
                     <Button
                         type="submit"
                         fullWidth
@@ -81,7 +101,7 @@ class CreateUserAccount extends Component {
                     </Button>
                     <Grid container justify="flex-end">
                         <Grid item>
-                        <Link href="#" variant="body2">
+                        <Link href="/" variant="body2">
                             Already have an account? Sign in
                         </Link>
                         </Grid>

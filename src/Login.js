@@ -4,7 +4,7 @@ import CreateUserAccount from './User/CreateUserAccount';
 import ResetPassword from './User/ResetPassword';
 import CreateGuestAccount from './Guest/CreateGuestAccount';
 import { Button, TextField, Typography, Container, CssBaseline, Avatar, FormControlLabel, Checkbox, Grid, Box, } from '@material-ui/core';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
     constructor(props) {
@@ -69,25 +69,19 @@ class Login extends Component {
                                 Sign In
                                 </Button>
                             </div>
-                                <Router>
-                                    <Grid container>
-                                        <Grid item xs>
-                                            <Link to="/reset-password" variant="body2">Forgot password?</Link>
-                                            <Route path="/reset-password" component={ ResetPassword } />
-                                        </Grid>
-                                
-                                        <Grid item xs>
-                                            <Link to="/create-user-account" variant="body2">Create Account</Link>
-                                            <Route path="/create-user-account" component={ CreateUserAccount } />
-                                        </Grid>
-                                
-                                        <Grid item>
-                                            <Link to="/guest-login" variant="body2">Guest Login</Link>
-                                            <Route path="/guest-login" component={ CreateGuestAccount } />
-                                        </Grid>
+                                <Grid container>
+                                    <Grid item xs>
+                                        <Link to="/reset-password" variant="body2">Forgot password?</Link>
                                     </Grid>
-                                    
-                                </Router>
+                            
+                                    <Grid item xs>
+                                        <Link to="/create-user-account" variant="body2">Create Account</Link> 
+                                    </Grid>
+                            
+                                    <Grid item>
+                                        <Link to="/guest-login" variant="body2">Guest Login</Link>
+                                    </Grid>
+                                </Grid>
                             </form>
                     </div>
                         <Box mt={8}>
