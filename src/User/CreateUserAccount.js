@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 import { Avatar, Button, CssBaseline, TextField, Link, Grid, Box, Typography, Container } from '@material-ui/core';
 
+function Copyright() {
+    return (
+      <Typography variant="body2" color="textSecondary" align="center">
+        {'Copyright © '}
+        <Link color="inherit" href="https://material-ui.com/">
+          CareAmarillo
+        </Link>{' '}
+        {new Date().getFullYear()}
+        {'.'}
+      </Typography>
+    );
+  }
+
 class CreateUserAccount extends Component {
     constructor(props) {
         super(props)
@@ -109,6 +122,7 @@ class CreateUserAccount extends Component {
                 </form>
             </div>
                 <Box mt={5}>
+                    <Copyright />
                 </Box>
             </Container>
         );

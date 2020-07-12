@@ -1,24 +1,43 @@
 import React, { Component } from 'react';
 import UserDashboard from './User/UserDashboard';
-import CreateUserAccount from './User/CreateUserAccount';
-import ResetPassword from './User/ResetPassword';
-import CreateGuestAccount from './Guest/CreateGuestAccount';
 import { Button, TextField, Typography, Container, CssBaseline, Avatar, FormControlLabel, Checkbox, Grid, Box, } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import PopUp from './User/PopUp';
+
+function Copyright() {
+    return (
+      <Typography variant="body2" color="textSecondary" align="center">
+        {'Copyright © '}
+        <Link color="inherit" href="https://material-ui.com/">
+          CareAmarillo
+        </Link>{' '}
+        {new Date().getFullYear()}
+        {'.'}
+      </Typography>
+    );
+  }
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
             loggedIn: false,
-            text: ""
+            text: "",
+            seen: false
         }
     }
+
+    togglePop = () => {
+        this.setState({
+            seen: !this.state.seen
+        });
+    };
+
     toggle = (e) => {
         e.preventDefault();
         this.setState({
             loggedIn: !this.state.loggedIn
-        });
+    });
     }
 
     render() {
@@ -71,7 +90,11 @@ class Login extends Component {
                             </div>
                                 <Grid container>
                                     <Grid item xs>
-                                        <Link to="/reset-password" variant="body2">Forgot password?</Link>
+                                        <div className="btn" onClick={this.togglePop}>
+                                            <Link>Forgot Password</Link>
+                                        </div>
+                                        {this.state.seen ? <PopUp toggle={this.togglePop} /> : null}
+                                        {/* <Link to="/reset-password" variant="body2">Forgot password?</Link> */}
                                     </Grid>
                             
                                     <Grid item xs>
@@ -85,6 +108,7 @@ class Login extends Component {
                             </form>
                     </div>
                         <Box mt={8}>
+                            <Copyright />
                         </Box>
                 </Container>
             )
