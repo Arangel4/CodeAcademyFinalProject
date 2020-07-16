@@ -66,4 +66,21 @@
   margin-top: 5%;
 }
 
+.userDashAppBar {
+  border-bottom: 1px solid;
+}
+
+.userDashTool {
+  flex-wrap: wrap;
+}
+
+.userDashTypo {
+  flex-grow: 1;
+}
+
+.userDashLink {
+  margin-left: 1;
+  margin-right: 1.5;
+}
+
 

@@ -3,7 +3,6 @@ import Login from './Login';
 import ResetPassword from './User/ResetPassword';
 import CreateUserAccount from './User/CreateUserAccount';
 import CreateGuestAccount from  './Guest/CreateGuestAccount';
-import UserDashboard from './User/UserDashboard';
 import GuestDashboard from './Guest/GuestDashboard';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
@@ -21,7 +20,6 @@ function App() {
           <Route path="/create-user-account" component={ CreateUserAccount } />
           <Route path="/guest-login" component={ CreateGuestAccount } />
           <Route exact path="/" component={ Login } />
-          <Route path="/user-dashboard" component={UserDashboard} />
           <Route path="./guest-dashboard" component={GuestDashboard} />
         </Router>
       </div>
